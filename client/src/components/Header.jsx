@@ -17,7 +17,7 @@ const Header = ({ title, subtitle }) => {
             fontWeight="bold"
             sx={{ mb: "5px" }}
         >
-            {title} inside Header.jsx
+            {title} (inside Header.jsx)
         </Typography>
         <Typography
             variant="h5"
