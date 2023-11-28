@@ -11,7 +11,7 @@ const Daily = () => {
   const [endDate, setEndDate] = useState(new Date("2021-03-01"));
   const { data } = useGetSalesQuery();
   const theme = useTheme();
-//   console.log("dailydata", data);
+  console.log("dailydata", data);
 
   const [formattedData] = useMemo(() => {
     if (!data) return [];
@@ -45,6 +45,7 @@ const Daily = () => {
     });
 
     const formattedData = [totalSalesLine, totalUnitsLine];
+    console.log(formattedData);
     return [formattedData];
   }, [data, startDate, endDate]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -74,7 +75,7 @@ const Daily = () => {
           </Box>
         </Box>
 
-        {data ? (
+        {formattedData ? (
         <ResponsiveLine
             data={formattedData}
             theme={{
