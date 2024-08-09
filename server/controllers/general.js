@@ -1,5 +1,5 @@
 import User from '../models/User.js';
-import OverallStat from "../models/Transaction.js";
+import OverallStat from "../models/OverallStat.js";
 import Transaction from "../models/Transaction.js";
 
 export const getUser = async (req, res) => {
@@ -20,7 +20,7 @@ export const getDashboardStats = async (req, res) => {
         const currentDay = "2021-11-15";
 
         /* Recent Transactions */
-        const transactions = await Transaction.find().limit().sort({ createdOn: -1 });
+        const transactions = await Transaction.find().limit(50).sort({ createdOn: -1 });
 
         /* Overall Stats */
         const overallStat = await OverallStat.find({ year: currentYear });

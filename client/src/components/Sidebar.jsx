@@ -136,7 +136,7 @@ const Sidebar = ({
                   </Typography>
                 </Box>
                 {/* Exclamation was before isNonMobile below. I removed it to get it to work */}
-                {isNonMobile && (
+                {!isNonMobile && (
                   <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <ChevronLeft />
                   </IconButton>
