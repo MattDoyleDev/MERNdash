@@ -12,7 +12,7 @@ const Daily = () => {
   const { data } = useGetSalesQuery();
 //   console.log("API data", data); // Add this line
   const theme = useTheme();
-//   console.log("dailydata", data);
+  console.log("dailydata", data);
 
   const [formattedData] = useMemo(() => {
     if (!data) return [];
